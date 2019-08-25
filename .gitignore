@@ -1,0 +1,12 @@
+.DS_Store
+npm-debug.*
+package-lock.json
+node_modules
+dist
+*.swp
+*.swo
+.idea/
+.vscode/
+logs/
+config/local_db.js
+.eslintrc
