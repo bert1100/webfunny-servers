@@ -8,7 +8,7 @@ mysql版本号. 5.6.45  (mysql 安装教程自行搜索 [Linux安装教程](http
   
   2. 在根目录下执行命令$: node config.js 等待配置完成，然后执行命令$: npm run start
   
-  3. 访问链接地址： [http://localhost:8010/home.html]http://localhost:8010/home.html 即可看到官网数据。
+  3. 访问链接地址： [http://localhost:8010/home.html](http://localhost:8010/home.html) 即可看到官网数据。
   
   那么如何展示自己的数据呢？
   
@@ -28,8 +28,8 @@ mysql版本号. 5.6.45  (mysql 安装教程自行搜索 [Linux安装教程](http
           */
           const default_assets_url = "//localhost:8010"
 
-  6. 配置完成后， 在根目录下执行命令$: npm run start, 本地服务完成启动。
+  6. 配置完成后，再一次执行命令$: node config.js  等待完成后，在根目录下执行命令$: npm run start, 本地服务完成启动。
   
-  访问链接地址： [http://localhost:8010/home.html]http://localhost:8010/home.html 即可看到你自己mysql里边的数据了（如果你的探针已经在上传数据了）。
+  访问链接地址： [http://localhost:8010/home.html](http://localhost:8010/home.html) 即可看到你自己mysql里边的数据了（如果你的探针已经在上传数据了）。
 
   ps: 如需启动生产服务，需安装PM2, 然后运行命令$: npm run prd, 即可启动生产服务。
