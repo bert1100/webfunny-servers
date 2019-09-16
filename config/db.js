@@ -8,7 +8,6 @@ const sequelize = new Sequelize('数据库名称', '用户名', '密码', {
     supportBigNumbers: true,
     bigNumberStrings: true
   },
-
   pool: {
     max: 50,
     min: 0,

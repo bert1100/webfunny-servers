@@ -146,6 +146,8 @@ router.get('/getConsoleErrorInfoListByDay', JavascriptErrorInfoController.getCon
 router.get('/getJavascriptErrorInfoListByHour', JavascriptErrorInfoController.getJavascriptErrorInfoListByHour);
 // 查询一个天内每小时的自定义错误量
 router.get('/getJavascriptConsoleErrorInfoListByHour', JavascriptErrorInfoController.getJavascriptConsoleErrorInfoListByHour);
+// 查询一个天内某个错误每小时的错误量
+router.get('/getJsErrorCountByHour', JavascriptErrorInfoController.getJsErrorCountByHour);
 // 根据JS错误数量进行分类排序
 router.post('/getJavascriptErrorSort', JavascriptErrorInfoController.getJavascriptErrorSort);
 router.post('/getConsoleErrorSort', JavascriptErrorInfoController.getConsoleErrorSort);

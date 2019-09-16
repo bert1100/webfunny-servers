@@ -14,4 +14,8 @@ module.exports = {
     const endSql = " and happenTime < '" + endTime + "' "
     return startSql + endSql
   },
+  setTableName: function (startName, day) {
+    const endName = utils.addDays(0 - day).replace(/-/g, "")
+    return startName + endName
+  }
 }

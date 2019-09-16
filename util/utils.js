@@ -1,7 +1,7 @@
 require("./extension")
-var myAtob = require("atob")
-var crypto = require('crypto')
-var nodemailer = require('nodemailer');
+const myAtob = require("atob")
+const crypto = require('crypto')
+const nodemailer = require('nodemailer');
 module.exports = {
   isObject(obj) {
     return (Object.prototype.toString.call(obj) == '[object Object]');
@@ -59,19 +59,19 @@ module.exports = {
     return CurrentDate;
   },
   parseQs: function (s) {
-    var index = s.indexOf("?")
-    var result = {}
+    const index = s.indexOf("?")
+    const result = {}
     if (index === -1) return result
-    var arr = s.substr(index + 1).split("&")
+    const arr = s.substr(index + 1).split("&")
     arr.forEach(function(item) {
-      var equals = item.split("=")
-      var key = decodeURIComponent(equals[0])
-      var val = decodeURIComponent(equals[1] || "")
-      var i = 0
-      var splitting = key.split(".")
-      var len = splitting.length
+      const equals = item.split("=")
+      let key = decodeURIComponent(equals[0])
+      const val = decodeURIComponent(equals[1] || "")
+      let i = 0
+      const splitting = key.split(".")
+      const len = splitting.length
       key = splitting[len - 1]
-      var temp = result
+      let temp = result
       if (len > 1) {
         for (; i < len - 1; i++) {
           if (!temp[splitting[i]] || !this.isObject(temp[splitting[i]])) temp[splitting[i]] = {}
@@ -104,11 +104,11 @@ module.exports = {
 
   },
   md5Encrypt: function(encryptString) {
-    var hash = crypto.createHash('md5');
+    let hash = crypto.createHash('md5');
     return hash.update(encryptString).digest('base64');
   },
   sendEmail: (email, subject, html) => {
-    var transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       host: "smtp.163.com",
       port: 465,
       secure: true, // true for 465, false for other ports
@@ -125,5 +125,8 @@ module.exports = {
       text: html, // plain text body
       html: html // html body
     });
+  },
+  setTableName(name) {
+    return name + new Date().Format("yyyyMMdd")
   }
 }

@@ -8,5 +8,6 @@ dist
 .idea/
 .vscode/
 logs/
+webfunny/
 config/local_db.js
 .eslintrc
