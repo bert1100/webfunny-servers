@@ -33,3 +33,4 @@ mysql版本号. 5.6.45  (mysql 安装教程自行搜索 [Linux安装教程](http
   访问链接地址： [http://localhost:8010/home.html](http://localhost:8010/home.html) 即可看到你自己mysql里边的数据了（如果你的探针已经在上传数据了）。
 
   ps: 如需启动生产服务，需安装PM2, 然后运行命令$: npm run prd, 即可启动生产服务。
+  ps2: 数据库表都是程序自动创建的，但是数据库需要你手动创建
