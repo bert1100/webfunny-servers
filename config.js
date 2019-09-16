@@ -7,12 +7,17 @@
   * 请求接口域名 webfunny-servers 的服务的部署域名
   * 本地请使用 "//localhost:8011"
   */
-const default_api_server_url = "//localhost:8011"  // 设置成 "//www.webfunny.cn" 可以直接看到官网的数据
+// 本地部署
+//const default_api_server_url = "//localhost:8011"  
+
+// Demo数据
+const default_api_server_url = "//www.webfunny.cn"  
 
 /**
  * 静态资源域名 webfunny-admin 的部署域名
  * 本地请使用 "//localhost:8010"
  */
+// 本地部署
 const default_assets_url = "//localhost:8010"
 
 /** 重要！ 重要！ 重要！ 这里一定要配置的*/
