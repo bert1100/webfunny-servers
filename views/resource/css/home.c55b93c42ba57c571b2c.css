@@ -323,7 +323,7 @@ body {
     font-size: 0.3rem; }
   .home-container .panel-box {
     position: fixed;
-    width: 2.85rem;
+    width: 2.25rem;
     height: 100%;
     background: #fafafc;
     z-index: 1;
@@ -359,7 +359,7 @@ body {
     position: absolute;
     z-index: 9;
     top: 0.84rem;
-    left: 2.49rem;
+    left: 1.9rem;
     font-size: 0.16rem;
     opacity: 0.6;
     cursor: pointer; }
@@ -368,10 +368,11 @@ body {
   .home-container .home-content {
     margin-top: 0.62rem;
     padding: 0.2rem;
+    padding-bottom: 1rem;
     position: fixed;
-    width: calc(100% - 2.85rem);
+    width: calc(100% - 2.25rem);
     height: 100%;
-    left: 2.85rem;
+    left: 2.25rem;
     overflow-y: auto; }
     .home-container .home-content .chart-box {
       float: left;
@@ -514,6 +515,10 @@ body {
       justify-content: center;
       -ms-flex-align: center;
       align-items: center; }
+    .home-container .home-content .video-box {
+      width: 100%;
+      min-height: 4rem;
+      overflow: auto; }
   .home-container .ant-tabs-nav .ant-tabs-tab-active {
     font-weight: 600; }
 
@@ -544,6 +549,13 @@ body {
       font-size: 0.24rem;
       float: left;
       margin: 0.05rem 0; }
+  .header-container .menu-flag {
+    font-size: 0.12rem;
+    -ms-transform: scale(0.75);
+    transform: scale(0.75);
+    float: right;
+    margin-top: 0.03rem;
+    color: yellow; }
   .header-container .home-icon {
     width: 2rem;
     font-size: 0.22rem;

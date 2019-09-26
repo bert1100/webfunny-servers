@@ -42,6 +42,13 @@
       font-size: 0.24rem;
       float: left;
       margin: 0.05rem 0; }
+  .header-container .menu-flag {
+    font-size: 0.12rem;
+    -ms-transform: scale(0.75);
+    transform: scale(0.75);
+    float: right;
+    margin-top: 0.03rem;
+    color: yellow; }
   .header-container .home-icon {
     width: 2rem;
     font-size: 0.22rem;

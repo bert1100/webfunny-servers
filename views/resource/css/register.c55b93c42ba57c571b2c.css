@@ -1,0 +1,22 @@
+.register-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #fff; }
+  .register-container .box {
+    width: 6rem;
+    height: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem; }
+    .register-container .box .input-box {
+      margin: 0.15rem 0; }
+  .register-container .btn {
+    margin: auto;
+    display: block;
+    float: left;
+    width: 50%;
+    margin-top: 0.1rem; }
+
