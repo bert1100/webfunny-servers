@@ -1,12 +1,16 @@
 ### 监控后台部署教程
 
-node版本号： 10.6.0  (node安装教程自行搜索)
+node版本号： 10.6.0  (node安装教程自行搜索, 建议先安装[nvm](https://www.jianshu.com/p/d0e0935b150a), 这样切换node版本会方便很多)
 
 mysql版本号. 5.6.45  (mysql 安装教程自行搜索 [Linux安装教程](https://www.cnblogs.com/warm-stranger/p/10333348.html))
 
   1. 下载或者克隆代码到本地
   
-  2. 在根目录下执行命令$: node config.js 等待配置完成，然后执行命令$: npm run start
+  2. 安装程序的依赖包，执行命令$: npm install
+  
+     在根目录下执行命令$: node config.js 
+     
+     等待配置完成，然后执行命令$: npm run start
   
   3. 访问链接地址： [http://localhost:8010/home.html](http://localhost:8010/home.html) 即可看到官网数据。
   
