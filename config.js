@@ -11,7 +11,7 @@
 //const default_api_server_url = "//localhost:8011"  
 
 // Demo数据
-const default_api_server_url = "//www.webfunny.cn"  
+const default_api_server_url = "//localhost:8011"  
 
 /**
  * 静态资源域名 webfunny-admin 的部署域名

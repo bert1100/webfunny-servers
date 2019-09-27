@@ -2,8 +2,8 @@
 const baseInfo = require('./baseInfo');
 const Utils = require('../util/utils');
 //delete//
-const ScreenShotInfo = function (sequelize, DataTypes) {
-  return sequelize.define(Utils.setTableName('ScreenShotInfo'), {
+const VideosInfo = function (sequelize, DataTypes) {
+  return sequelize.define(Utils.setTableName('VideosInfo'), {
     ...baseInfo(DataTypes),
     // ID 主键
     id: {
@@ -12,23 +12,11 @@ const ScreenShotInfo = function (sequelize, DataTypes) {
       allowNull: false,
       autoIncrement: true,
     },
-    // 描述信息
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-      field: 'description'
-    },
-    // 截屏信息
-    screenInfo: {
+    // 录屏数据
+    event: {
       type: "mediumblob",
       allowNull: true,
-      field: 'screenInfo'
-    },
-    // 图片类型
-    imgType: {
-      type: DataTypes.STRING(20),
-      allowNull: true,
-      field: 'imgType'
+      field: 'event'
     },
   }, {
     // 如果为 true 则表的名称和 model 相同，即 user
@@ -37,17 +25,20 @@ const ScreenShotInfo = function (sequelize, DataTypes) {
     freezeTableName: true,
     indexes: [
       {
-        name: "searchIndex",
+        name: "webMonitorIdIndex",
         method: "BTREE",
         fields: [
           {
-            attribute: "userId",
-          },
+            attribute: "webMonitorId"
+          }
+        ]
+      },
+      {
+        name: "customerKeyIndex",
+        method: "BTREE",
+        fields: [
           {
-            attribute: "customerKey",
-          },
-          {
-            attribute: "createdAt",
+            attribute: "customerKey"
           }
         ]
       }
@@ -56,5 +47,5 @@ const ScreenShotInfo = function (sequelize, DataTypes) {
 
 }
 //exports//
-module.exports = ScreenShotInfo
+module.exports = VideosInfo
 //exports//

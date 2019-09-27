@@ -1,8 +1,9 @@
 //delete//
 const baseInfo = require('./baseInfo');
+const Utils = require('../util/utils');
 //delete//
 const CustomerPV = function (sequelize, DataTypes) {
-  return sequelize.define('CustomerPV', {
+  return sequelize.define(Utils.setTableName('CustomerPV'), {
     ...baseInfo(DataTypes),
     // ID 主键
     id: {
@@ -88,12 +89,18 @@ const CustomerPV = function (sequelize, DataTypes) {
       type: DataTypes.STRING(10),
       allowNull: true,
       field: 'loadTime'
+    },
+    // 判断是否为新用户 "new/old"
+    newStatus: {
+      type: DataTypes.STRING(3),
+      allowNull: true,
+      field: 'newStatus'
     }
   }, {
     // 如果为 true 则表的名称和 model 相同，即 user
     // 为 false MySQL创建的表名称会是复数 users
     // 如果指定的表名称本就是复数形式则不变
-    freezeTableName: false,
+    freezeTableName: true,
     indexes: [
       {
         name: "userIdIndex",

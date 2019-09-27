@@ -1,11 +1,18 @@
 const Router = require('koa-router')
-const {HttpErrorInfoController,HttpLogInfoController,ScreenShotInfoController,BehaviorInfoController,DailyActivityController,EmailCodeController,ExtendBehaviorInfoController,IgnoreErrorController,InfoCountByHourController,LoadPageInfoController,ProjectController,ResourceLoadInfoController,UserController,VideosController,CustomerPVController,JavascriptErrorInfoController,Common} = require("../controllers/controllers.js")
+const {HttpLogInfoController,ScreenShotInfoController,BehaviorInfoController,HttpErrorInfoController,DailyActivityController,EmailCodeController,ExtendBehaviorInfoController,IgnoreErrorController,InfoCountByHourController,LoadPageInfoController,ProjectController,ResourceLoadInfoController,UserController,VideosInfoController,CustomerPVController,JavascriptErrorInfoController,Common} = require("../controllers/controllers.js")
 const router = new Router({
     prefix: '/server'
 })
-
+// 定时计算每小时的数据量结果
 Common.calculateCountByHour()
+
+// 定时计算每天的数据量
+Common.calculateCountByDay()
+
+// 定时检查检查mysql的连接报错数量
 Common.checkMysqlConnectErrors()
+// Common.calculateCountByHourTest()
+
 // 定时删除过期日志
 Common.startDelete();
 /**
@@ -15,6 +22,7 @@ Common.startDelete();
 router.post('/uploadLog', Common.uploadLog);
 router.post('/upLg', Common.upLg);
 router.post('/upLog', Common.upLog);
+router.post('/upLog_long', Common.upLog_long);
 
 // 上传拓展日志
 router.post('/uploadExtendLog', Common.uploadExtendLog);
@@ -87,6 +95,10 @@ router.put('/customerPV/:id', CustomerPVController.update);
 router.post('/getCustomerCountByTime', CustomerPVController.getCustomerCountByTime);
 // 获取24小时内每小时PV量
 router.post('/getPvCountByHour', CustomerPVController.getPvCountByHour);
+// 获取24小时内每小时新用户量
+router.post('/getNewCustomerCountByHour', CustomerPVController.getNewCustomerCountByHour);
+// 获取24小时内每小时用户的平均安装量
+router.post('/getInstallCountByHour', CustomerPVController.getInstallCountByHour);
 // 获取24小时内每小时UV量
 router.post('/getUvCountByHour', CustomerPVController.getUvCountByHour);
 // 获取24小时内每小时user数量
@@ -144,10 +156,12 @@ router.get('/getJavascriptErrorInfoListByDay', JavascriptErrorInfoController.get
 router.get('/getConsoleErrorInfoListByDay', JavascriptErrorInfoController.getConsoleErrorInfoListByDay);
 // 查询一个天内每小时的错误量
 router.get('/getJavascriptErrorInfoListByHour', JavascriptErrorInfoController.getJavascriptErrorInfoListByHour);
-// 查询一个天内每小时的自定义错误量
-router.get('/getJavascriptConsoleErrorInfoListByHour', JavascriptErrorInfoController.getJavascriptConsoleErrorInfoListByHour);
+// 查询一个天内某个错误每小时的错误量
+router.get('/getJavascriptErrorCountListByHour', JavascriptErrorInfoController.getJavascriptErrorCountListByHour);
 // 查询一个天内某个错误每小时的错误量
 router.get('/getJsErrorCountByHour', JavascriptErrorInfoController.getJsErrorCountByHour);
+// 查询一个天内每小时的自定义错误量
+router.get('/getJavascriptConsoleErrorInfoListByHour', JavascriptErrorInfoController.getJavascriptConsoleErrorInfoListByHour);
 // 根据JS错误数量进行分类排序
 router.post('/getJavascriptErrorSort', JavascriptErrorInfoController.getJavascriptErrorSort);
 router.post('/getConsoleErrorSort', JavascriptErrorInfoController.getConsoleErrorSort);
@@ -219,6 +233,14 @@ router.post('/getHttpErrorListByDay', HttpErrorInfoController.getHttpErrorListBy
 router.post('/getHttpErrorListByUrl', HttpErrorInfoController.getHttpErrorListByUrl);
 
 
+/**
+ * 用户访问录屏信息
+ */
+// 创建录屏信息
+router.post('/videosInfo', VideosInfoController.create);
+// 
+router.post('/getVideosEvent', VideosInfoController.getVideosEvent)
+
 
 // 创建新的监控项目
 router.post('/createNewProject', ProjectController.createNewProject);
@@ -236,6 +258,10 @@ router.get('/gitStars', Common.gitStars);
  * 推送信息相关
  */
 router.get('/pushInfo', Common.pushInfo);
+/**
+ * 版本校验
+ */
+router.get('/monitorVersion', Common.monitorVersion);
 
 // 测试接口
 router.get('/testBehaviors', BehaviorInfoController.testBehavior);
