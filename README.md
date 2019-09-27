@@ -44,7 +44,9 @@ mysql版本号. 5.6.45  (mysql 安装教程自行搜索 [Linux安装教程](http
   7. 生成你的探针代码 [http://localhost:8010/createProject.html](http://localhost:8010/createProject.html)
   
   访问链接地址： [http://localhost:8010/home.html](http://localhost:8010/home.html) 即可看到你自己mysql里边的数据了（如果你的探针已经在上传数据了）。
-
-  ps: 如需启动生产服务，需安装PM2, 然后运行命令$: npm run prd, 即可启动生产服务。
   
-  ps: 数据库表都是程序自动创建的，但是数据库需要你手动创建
+  ps1: 有些数据会在半小时内生成， 有些是实时的。
+
+  ps2: 如需启动生产服务，需安装PM2, 然后运行命令$: npm run prd, 即可启动生产服务。
+  
+  ps3: 数据库表都是程序自动创建的，但是（数据库）需要你手动创建
