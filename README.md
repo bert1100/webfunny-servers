@@ -45,7 +45,7 @@ mysql版本号. 5.6.45  (mysql 安装教程自行搜索 [Linux安装教程](http
   
   访问链接地址： [http://localhost:8010/home.html](http://localhost:8010/home.html) 即可看到你自己mysql里边的数据了（如果你的探针已经在上传数据了）。
   
-  ps1: 有些数据会在半小时内生成， 有些是实时的。
+  ps1: 有些数据会在半小时内生成，不要着急，有些是实时的。
 
   ps2: 如需启动生产服务，需安装PM2, 然后运行命令$: npm run prd, 即可启动生产服务。
   
