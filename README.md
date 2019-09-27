@@ -1,6 +1,6 @@
 #### 关注说明
 
-如果大家对项目感兴趣并关注，请移步到[webfunny-monitor](https://github.com/a597873885/webfunny-monitor)， 因为这些项目可能会随着技术升级而废弃掉，[webfunny-monitor](https://github.com/a597873885/webfunny-monitor)是主要开源项目。 :)
+如果大家对项目感兴趣并关注，请移步到[webfunny-monitor](https://github.com/a597873885/webfunny-monitor)， 因为本项目可能会随着技术升级而迁移或者废弃掉，[webfunny-monitor](https://github.com/a597873885/webfunny-monitor)是主要开源项目，地址不会变化。 :)
 
 
 ### 监控后台部署教程
