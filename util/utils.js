@@ -127,6 +127,6 @@ module.exports = {
     });
   },
   setTableName(name) {
-    return name + new Date().Format("yyyyMMdd")
+    return name // + new Date().Format("yyyyMMdd")
   }
 }

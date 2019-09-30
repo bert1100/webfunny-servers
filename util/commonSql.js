@@ -16,6 +16,6 @@ module.exports = {
   },
   setTableName: function (startName, day) {
     const endName = utils.addDays(0 - day).replace(/-/g, "")
-    return startName + endName
+    return startName //startName + endName
   }
 }
